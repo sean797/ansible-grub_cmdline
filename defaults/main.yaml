@@ -13,8 +13,11 @@ grub_cmdline_remove_args: []
 #grub_cmdline_remove_args:
 #  - biosdevname=0
 
-# Default path to the Grub 0.9x default config file
-grub_cmdline_path1: /boot/grub/grub.conf
+# Path to the Grub 0.9x config file
+grub_cmdline_config_v1: /boot/grub/grub.conf
 
-# Default path to the Grub2 default config file
-grub_cmdline_path2: /etc/default/grub
+# Path to the Grub2 config file
+grub_cmdline_config_v2: /boot/grub2/grub.cfg
+
+# Path to the Grub2 default file
+grub_cmdline_default: /etc/default/grub

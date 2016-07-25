@@ -1,4 +1,4 @@
 ---
 
 - name: Update Grub2 config file
-  shell: grub2-mkconfig -o /boot/grub2/grub.cfg
+  shell: grub2-mkconfig -o {{ grub_cmdline_config_v2 }}
