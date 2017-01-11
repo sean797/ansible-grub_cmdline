@@ -4,7 +4,7 @@ galaxy_info:
   author: grub_cmdline
   description: Role which helps to manage Grub command line arguments
   license: MIT
-  min_ansible_version: 1.7
+  min_ansible_version: 2.0
   platforms:
     - name: EL
       versions:
