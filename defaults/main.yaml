@@ -21,3 +21,7 @@ grub_cmdline_config_v2: /boot/grub2/grub.cfg
 
 # Path to the Grub2 default file
 grub_cmdline_default: /etc/default/grub
+
+# Enable FIPS Mode
+grub_enable_fips: no
+grub_fips_package: dracut-fips
