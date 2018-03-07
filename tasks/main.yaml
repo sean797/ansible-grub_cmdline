@@ -8,6 +8,9 @@
 - name: Make sure Perl is installed
   package:
     name: perl
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution_major_version | int <= 6
 
 - name: Get content of the Grub config file for RedHat <= 6
   shell: cat "{{ grub_cmdline_config_v1 }}" | perl -ane '/(?=.*{{ grub_cmdline_add_args | join(")(?=.*") }})/ && print "YES"'
