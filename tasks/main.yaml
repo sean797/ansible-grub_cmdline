@@ -34,17 +34,11 @@
     ansible_distribution_major_version | int <= 6 and
     grub_cmdline_remove_args | length > 0
 
-- name: Check fips cmdline
-  set_fact:
-    grub_cmdline_add_args: "{{ grub_cmdline_add_args }} + ['fips=1']"
-  when: >
-    grub_enable_fips and
-    'fips=1' not in grub_cmdline_add_args | join(' ')
-
-- name: "Install {{ fips_package }}"
+- name: Install FIPS package
   package:
-    name: "{{ fips_package }}"
-  when: grub_enable_fips
+    name: "{{ grub_cmdline_fips_package }}"
+  when: >
+    'fips=1' in grub_cmdline_add_args
 
 - name: Update Grub2 default config for RedHat >= 7
   lineinfile:
